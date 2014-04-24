@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 
+#Enter file name here
 $filename = "refs.bib";
 #$filename = "test.bib";
 #$outfilename = "temp.bib";
@@ -44,10 +45,11 @@ $filename = "refs.bib";
 #IEEE Proceedings
 `sed -i 's/journal={Proceedings of the IEEE}/journal={Proc. IEEE}/' $filename`;
 
+#--------------------------------------------------------------------------
 #To capitalize a set of words in the title
 
-@capitalize_set = ("SRAM", "8T", "CMOS", "VCC", "VLSI");
-@units_set = ("kHz", "MHz", "GHz", "mV", "V", "Kb", "Mb"); # These should have a number before them
+@capitalize_set = ("SRAM", "8T", "CMOS", "VCC", "VLSI"); #List of words to find and capitalize
+@units_set = ("kHz", "MHz", "GHz", "mV", "V", "Kb", "Mb"); #List of units to find and capitalize -- These should have a number before them
 
 @file_contents = `cat $filename`;
 open(NEW_FILE,">temp.script.file")||die "Error: Unable to write temp.script.file";
