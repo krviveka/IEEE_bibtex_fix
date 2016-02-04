@@ -13,6 +13,13 @@ This script fixes some of the errors in the bibliography downloaded from IEEE
  * These words are listed on the terminal - so that you can easily fix some changes that may be incorrectly changed
  * This features also throws-up some interesting anomalies - which can be fixed manually later
 
+
+How to Use:
+-----------
+```sh
+./bib_mod.pl input_bib_filname  output_bib_filname
+```
+
 Note:
 ----
 * Always compare the input and output by performing a diff (or gvimdiff or tkdiff or meld) to check the changes done by the script.
@@ -22,4 +29,11 @@ Note:
 Things I learned while creating this script:
 --------------------------------------------
 * IEEE bibtex contains special characters that are frequently incorrectly represented - such as \kappa or \mu or \&
-* The hyphen symbol causes special-pain in creating a robust script
+* The hyphen and slash symbols cause multiple issues impeding the creation of a robust script
+
+
+
+How to add/update this script:
+------------------------------
+* Please report bugs/issues - by creating an issue using the git-issue manager
+* If you would like me to add journal/conference names to the script (and are unable to do it yourself), please report this as an issue with low priority and label as "enhancement".        
