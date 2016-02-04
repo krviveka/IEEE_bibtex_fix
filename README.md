@@ -3,15 +3,15 @@ IEEE_bibtex_fix
 
 This script fixes some of the errors in the bibliography downloaded from IEEE
 * Updates journal and conference names:
-..* For eg. Original journal name: "Solid-State Circuits, IEEE Journal of" is replaced with "IEEE J. Solid-State Circuits"
-..* This is done for a limites set of journals and conferences relevant to VLSI
+  * For eg. Original journal name: "Solid-State Circuits, IEEE Journal of" is replaced with "IEEE J. Solid-State Circuits"
+ * This is done for a limites set of journals and conferences relevant to VLSI
 * Preserves case of a list of keywords
-..* The list can be easily appended to extend it
+ * The list can be easily appended to extend it
 * Preserves case of list of units
-..* This is only done if the units are preceded by numbers (space between number and unit is allowed)
+ * This is only done if the units are preceded by numbers (space between number and unit is allowed)
 * Locates words that contain more than one capital letter and preserves the case
-..* These words are listed on the terminal - so that you can easily fix some changes that may be incorrectly changed
-..* This features also throws-up some interesting anomalies - which can be fixed manually later
+ * These words are listed on the terminal - so that you can easily fix some changes that may be incorrectly changed
+ * This features also throws-up some interesting anomalies - which can be fixed manually later
 
 Note:
 ----
