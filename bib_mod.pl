@@ -52,7 +52,7 @@ system("cp $input_file_name $output_file_name");
 #To capitalize a set of words in the title
 
 @capitalize_set = ("SRAM", "8T", "CMOS", "VCC", "VLSI", "FPGA", "6T", "Kbit", "9T", "10T", "11T");
-@units_set = ("kHz", "MHz", "GHz", "mV", "V", "Kb", "Mb", "mW", "nW", "pW", "nJ", "pJ", "fJ"); # These should have a number before them
+@units_set = ("kHz", "MHz", "GHz", "mV", "V", "Kb", "Mb", "mW", "nW", "pW", "nJ", "pJ", "fJ"); # These should have a number before them or number and space
 
 @file_contents = `cat $output_file_name`;
 open(NEW_FILE,">temp.script.file")||die "Error: Unable to write temp.script.file";
@@ -74,8 +74,9 @@ foreach(@file_contents){
                 }
                 #units_set
                 foreach(@units_set){
-                        if(!($title =~ /[0-9]+\{$_\}/)){         # If even one word is already enclosed by curley brackets then do nothing 
-                                $title =~ s/([0-9]+)$_\b/$1\{$_\}/g; # as that word is probably already taken care of 
+                        if(!($title =~ /[0-9]+\{$_\}/)){                # If even one word is already enclosed by curley brackets then do nothing 
+                                $title =~ s/([0-9]+)$_\b/$1\{$_\}/g;    # as that word is probably already taken care of 
+                                $title =~ s/([0-9]+)\s*$_\b/$1 \{$_\}/g;# For numbers space units - eg: 10 nW --> 10 {nW}
                         }
                 }
                 #Check for possible words that may need to be preserved - any word containing more than one capital letters
